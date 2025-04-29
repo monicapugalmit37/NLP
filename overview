@@ -1,0 +1,121 @@
+
+
+# 📧 Spam Message Classifier using LSTM in PyTorch
+
+This project implements a spam message classifier using an LSTM (Long Short-Term Memory) neural network built with PyTorch. It processes SMS messages and classifies them as **spam** or **ham** (not spam).
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── mail_data.csv         # Dataset file (ensure this is in the project root)
+├── spam_classifier.py    # (Optional) Python script containing all code blocks
+├── README.md             # This file
+```
+
+---
+
+## 🚀 Features
+
+- Preprocessing with NLTK (stopwords removal, stemming, punctuation cleaning)
+- Word embedding using `nn.Embedding`
+- LSTM model for sequence learning
+- Binary classification with `BCEWithLogitsLoss`
+- Prediction interface via command line
+- Accuracy evaluation on test set
+
+---
+
+## 🧪 Dataset
+
+The project uses a CSV file named `mail_data.csv` with the following columns:
+
+- **Category**: Label (Spam or Ham)
+- **Message**: The SMS message content
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/spam-message-lstm.git
+   cd spam-message-lstm
+   ```
+
+2. **Install required libraries**:
+   ```bash
+   pip install torch pandas scikit-learn nltk
+   ```
+
+3. **Download NLTK resources**:
+   ```python
+   import nltk
+   nltk.download('stopwords')
+   ```
+
+4. **Ensure you have the dataset**:
+   Place `mail_data.csv` in the root directory of the project.
+
+---
+
+## 📊 Training the Model
+
+Run the code to:
+
+- Preprocess the data
+- Build vocabulary
+- Train the LSTM classifier
+- Evaluate the model
+
+Training parameters:
+- Embedding dimension: 100
+- Hidden dimension: 128
+- Batch size: 64
+- Epochs: 5
+
+---
+
+## 🧠 Model Architecture
+
+```text
+Input -> Embedding -> LSTM -> Fully Connected -> Sigmoid -> Prediction
+```
+
+---
+
+## ✅ Evaluation
+
+After training, the model achieves an **accuracy of ~86.64%** on the test set. You can adjust hyperparameters to improve performance.
+
+---
+
+## 🧪 Example Predictions
+
+```bash
+Enter a message to classify (or 'exit' to quit): Congratulation we have won a prize
+📬 Prediction: SPAM (Probability: 0.53)
+
+Enter a message to classify (or 'exit' to quit): Are you coming tonight
+📬 Prediction: HAM (Probability: 0.46)
+```
+
+---
+
+## 🛠️ Future Improvements
+
+- Add attention mechanism for better performance
+- Use pre-trained embeddings (like GloVe)
+- Save and load model checkpoints
+- Build a web UI using Flask or Streamlit
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
